@@ -40,6 +40,10 @@ interface AutoConnectLocalStorage {
   magicLinkEmail?: string
 }
 
+// Object.values(networksById).map(({ id }) => alert(id))
+
+// alert(getNetworkId())
+
 const rpcUrls: { [chainId: number]: string } = mapValues(
   networksById,
   (network) => network.infuraUrl,

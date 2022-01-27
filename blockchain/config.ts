@@ -251,8 +251,18 @@ const hardhat: NetworkConfig = {
   ), */
 }
 
-export const networksById = keyBy([main, kovan, hardhat, goerli], 'id')
-export const networksByName = keyBy([main, kovan, hardhat, goerli], 'name')
+const moonbase: NetworkConfig = {
+  ...protoMain,
+  id: '1287',
+  name: 'moonbase',
+  label: 'Moonbase',
+  infuraUrl: `https://rpc.testnet.moonbeam.network`,
+  infuraUrlWS: `wss://rpc.testnet.moonbeam.network`,
+  cacheApi: 'https://oazo-bcache.new.oasis.app/api/v1',
+}
+
+export const networksById = keyBy([main, kovan, hardhat, goerli, moonbase], 'id')
+export const networksByName = keyBy([main, kovan, hardhat, goerli, moonbase], 'name')
 
 export const dappName = 'Oasis'
 export const pollingInterval = 12000
